@@ -1,6 +1,8 @@
-# 🛍️ Gestor de Productos y Categorías
+# 🧮 Gestor de Productos y Categorías
 
-Este proyecto es una aplicación web completa desarrollada con **React.js** en el frontend y **Node.js + Express + Sequelize** en el backend, conectada a una base de datos **MySQL**. Permite realizar operaciones CRUD tanto para productos como para categorías, manteniendo relaciones entre ambos. Fue construido como parte de una prueba técnica.
+Aplicación web fullstack construida como prueba técnica, que permite gestionar productos y categorías con funcionalidades completas de CRUD, validaciones, autenticación y visualización de datos.
+
+Está desarrollada con **React.js** (frontend) y **Node.js + Express + Sequelize** (backend), conectada a una base de datos **MySQL**. Además, incluye autenticación JWT, dashboards con gráficas y diseño responsive con Bootstrap.
 
 ---
 
@@ -11,6 +13,7 @@ Este proyecto es una aplicación web completa desarrollada con **React.js** en e
 - Express.js
 - Sequelize ORM
 - MySQL
+- JWT (autenticación)
 - dotenv
 - cors
 
@@ -18,27 +21,31 @@ Este proyecto es una aplicación web completa desarrollada con **React.js** en e
 - React.js
 - React Router DOM
 - Axios
-- Bootstrap (estilizado)
-- Validaciones en formularios
+- Bootstrap 5
+- Chart.js (dashboard)
 
 ---
 
 ## 🧱 Estructura del Proyecto
 
 ```plaintext
-gestor-productos/
+PRUEBATECNICAPAVASFELIPEGOMEZ/
 ├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── .env
-│   └── app.js
+│ ├── config/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── seeders/
+│ ├── .env
+│ └── app.js
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── services/
-│   │   └── App.js
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── auth/
+│ │ │ ├── admin/
+│ │ ├── pages/
+│ │ ├── services/
+│ │ └── App.jsx
 └── README.md
 
 ⚙️ Instalación y Ejecución
@@ -110,3 +117,4 @@ El proyecto fue construido siguiendo buenas prácticas de estructura y modularid
 
 🤝 Licencia
 Este proyecto fue desarrollado como parte de una prueba técnica. Puedes usarlo como referencia para aprendizaje o mejorar tus habilidades fullstack.
+
