@@ -110,3 +110,10 @@ El proyecto fue construido siguiendo buenas prácticas de estructura y modularid
 
 🤝 Licencia
 Este proyecto fue desarrollado como parte de una prueba técnica. Puedes usarlo como referencia para aprendizaje o mejorar tus habilidades fullstack.
+![image](https://github.com/user-attachments/assets/a66ab27c-414b-4868-b1b9-a50d226beb4e)
+![image](https://github.com/user-attachments/assets/bac3852d-aa8a-4c07-87dc-0c2f95f93428)
+![image](https://github.com/user-attachments/assets/e5e2ee9d-8697-48c2-9c57-107b6475da32)
+![image](https://github.com/user-attachments/assets/f529a63a-6924-44d8-b258-770e8f36c289)
+
+
+
