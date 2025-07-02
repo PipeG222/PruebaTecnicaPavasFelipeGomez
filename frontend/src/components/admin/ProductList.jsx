@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getProducts, deleteProduct } from '../../services/productoService';
 import ProductForm from './ProductForm';
+import ProductDetail from './ProductDetail';
 
 const ProductList = () => {
   const [productos, setProductos] = useState([]);
   const [selected, setSelected] = useState(null);
   const [refresh, setRefresh] = useState(false);
+  const [showDetail, setShowDetail] = useState(null);
 
   useEffect(() => {
     getProducts()
@@ -40,8 +42,24 @@ const ProductList = () => {
                 <strong>{prod.name}</strong> — {prod.categoria?.name || 'Sin categoría'}
               </div>
               <div>
-                <button className="btn btn-sm btn-outline-primary me-2" onClick={() => handleEdit(prod)}>Editar</button>
-                <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(prod.id)}>Eliminar</button>
+                <button
+                  className="btn btn-sm btn-outline-info me-2"
+                  onClick={() => setShowDetail(prod)}
+                >
+                  Detalles
+                </button>
+                <button
+                  className="btn btn-sm btn-outline-primary me-2"
+                  onClick={() => handleEdit(prod)}
+                >
+                  Editar
+                </button>
+                <button
+                  className="btn btn-sm btn-outline-danger"
+                  onClick={() => handleDelete(prod.id)}
+                >
+                  Eliminar
+                </button>
               </div>
             </li>
           ))}
@@ -52,6 +70,13 @@ const ProductList = () => {
         <h3>{selected ? 'Editar Producto' : 'Nuevo Producto'}</h3>
         <ProductForm initialData={selected} onSuccess={handleFormSuccess} />
       </div>
+
+      {showDetail && (
+        <ProductDetail
+          producto={showDetail}
+          onClose={() => setShowDetail(null)}
+        />
+      )}
     </div>
   );
 };

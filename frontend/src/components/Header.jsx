@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { isAuthenticated, logout, getUserFromToken } from '../services/authService';
 import { useEffect, useState } from 'react';
+import { FaChartBar } from 'react-icons/fa'; // ✅ ícono de gráfico
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,6 +22,14 @@ const Header = () => {
     navigate('/');
   };
 
+  const handleAdminClick = () => {
+    if (isAuthenticated()) {
+      navigate('/dashboard');
+    } else {
+      alert('⚠️ Debes iniciar sesión primero para acceder al panel de administración');
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <Link className="navbar-brand" to="/">Gestor de Productos y Categorías</Link>
@@ -30,6 +39,14 @@ const Header = () => {
       </button>
 
       <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <button
+          className="btn btn-outline-warning me-3 d-flex align-items-center"
+          onClick={handleAdminClick}
+        >
+          <FaChartBar className="me-2" />
+          Admin
+        </button>
+
         {usuario ? (
           <>
             <span className="navbar-text text-white me-3">
