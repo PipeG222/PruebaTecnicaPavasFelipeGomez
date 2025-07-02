@@ -12,7 +12,7 @@ const categoriaRoutes = require('./routes/categorias.routes');
 const productoRoutes = require('./routes/producto.routes');
 
 app.use('/api/categorias', categoriaRoutes);
-app.use('/api/producto', productoRoutes);
+app.use('/api/productos', productoRoutes);
 app.use('/api/auth', authRoutes);
 
 const PORT = process.env.PORT || 4000;
